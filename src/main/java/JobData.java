@@ -73,7 +73,7 @@ public class JobData {
             String aValue = row.get(column);
 
             if (aValue.toLowerCase().contains(value.toLowerCase())) {
-                jobs.add(row);
+                jobs.add(row); //Adds case insensitivity
             }
         }
         return jobs;
@@ -92,11 +92,14 @@ public class JobData {
 
         // TODO - implement this method
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
+// Iterate through each row in the dataset
             for (HashMap<String, String> row : allJobs) {
+                // Iterate through each key-value pair in the current row
                 for(Map.Entry<String, String> entry : row.entrySet()) {
+                    // Get the value of the current key-value pair
                     String wholeValue = entry.getValue();
 
+                    //Case Insensitivity
                     if (wholeValue.toLowerCase().contains(value.toLowerCase())){
                         jobs.add(row);
                     }

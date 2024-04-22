@@ -121,14 +121,15 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         if (someJobs.isEmpty()) {
-            System.out.print("No Results");
+            System.out.print("No Results"); //adds the no result
         } else {
-            for (HashMap<String, String> job : someJobs) {
-                System.out.println("\n*****");
-                for (Map.Entry<String, String> entry : job.entrySet()) {
-                    String key = entry.getKey();
-                    String Value = entry.getValue();
-                    System.out.println(key + ": " + Value);
+            // Iterate through each HashMap in the list of jobs
+            for (HashMap<String, String> job : someJobs) { // Loop through each job in the list
+                System.out.println("\n*****"); // spaces and stars
+                for (Map.Entry<String, String> entry : job.entrySet()) { // Iterate through each key-value pair in the current job's HashMap
+                    String key = entry.getKey(); //grabs key
+                    String Value = entry.getValue(); //grabs Value
+                    System.out.println(key + ": " + Value); //prints key + Value
                 }
                 System.out.println("*****");
             }
